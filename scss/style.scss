@@ -1,0 +1,41 @@
+$primary-font: "Helvetica Neue", Helvetica, sans-serif;
+
+$primary-color: red;
+
+$large-screen: 45em;
+$medium-screen: 30em;
+
+/* Test Mixin is used to pump out a red outline around the object */
+@mixin test() {
+	outline: 10px solid red;
+}
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+
+h1 {
+	border: 1px solid $primary-color;
+	font-family: $primary-font;
+}
+
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: Helvetica;
+	width: 1020px;
+	@include test;
+}
+
+h2 {
+	border: 1px solid green;
+}
+
+/* Main Navigation */
+@import 'navigation';
+
+/* Footer */
+@import '_footer';
